@@ -6,7 +6,7 @@ Repositorio de equipo para respaldar todos los proyectos de desarrollo del proye
 Contenido:
 - backend
   - REDRE (Proyecto Back-End con Spring)
-- Front-End
+- frontend
   - WEB
     - REDRE (React)
   - Android
