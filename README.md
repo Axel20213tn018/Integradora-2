@@ -15,7 +15,7 @@ Contenido:
   - (Scripts y Modelos)
 
 Miembros de Equipo:
-- Luis Eduardo Bahena Castillo
+- Luis Eduardo Bahena Castillo **(Lider de Equipo)**
 - Axel Hernandez De La Cruz
 - Andrea Michelle Estrada Hernandez
 - Ximena Natalia Garcia Araujo
