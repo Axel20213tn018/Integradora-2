@@ -13,6 +13,7 @@ Contenido:
     - REDRE (expo/cli)
 - DataBase
   - (Scripts y Modelos)
+- Vistas Integradora (Prototipo de Vistas Web)
 
 Miembros de Equipo:
 - Luis Eduardo Bahena Castillo **(Lider de Equipo)**
