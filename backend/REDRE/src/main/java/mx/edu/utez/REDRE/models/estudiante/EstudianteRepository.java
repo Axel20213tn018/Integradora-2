@@ -1,2 +1,4 @@
-package mx.edu.utez.REDRE.models.estudiante;public interface EstudianteRepository {
+package mx.edu.utez.REDRE.models.estudiante;
+
+public interface EstudianteRepository {
 }

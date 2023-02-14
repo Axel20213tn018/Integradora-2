@@ -1,2 +1,4 @@
-package mx.edu.utez.REDRE.services.responsable;public class ResponsableService {
+package mx.edu.utez.REDRE.services.responsable;
+
+public class ResponsableService {
 }

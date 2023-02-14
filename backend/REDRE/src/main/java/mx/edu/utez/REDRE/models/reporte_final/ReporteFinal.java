@@ -1,2 +1,4 @@
-package mx.edu.utez.REDRE.models.reportes_finales;public class ReporteFinal {
+package mx.edu.utez.REDRE.models.reporte_final;
+
+public class ReporteFinal {
 }

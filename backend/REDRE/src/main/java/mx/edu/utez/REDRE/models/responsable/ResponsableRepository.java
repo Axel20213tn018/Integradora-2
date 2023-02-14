@@ -1,2 +1,4 @@
-package mx.edu.utez.REDRE.models.responsable;public class ResponsableRepository {
+package mx.edu.utez.REDRE.models.responsable;
+
+public interface ResponsableRepository {
 }

@@ -1,2 +1,4 @@
-package mx.edu.utez.REDRE.models.asesor;public class AsesorDto {
+package mx.edu.utez.REDRE.models.asesor;
+
+public class AsesorDto {
 }

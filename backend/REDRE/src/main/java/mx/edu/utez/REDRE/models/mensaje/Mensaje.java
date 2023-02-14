@@ -1,2 +1,4 @@
-package mx.edu.utez.REDRE.models.mensaje;public class Mensaje {
+package mx.edu.utez.REDRE.models.mensaje;
+
+public class Mensaje {
 }

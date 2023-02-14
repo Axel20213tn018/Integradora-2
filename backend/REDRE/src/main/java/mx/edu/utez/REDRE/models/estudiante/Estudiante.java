@@ -1,2 +1,4 @@
-package mx.edu.utez.REDRE.models.estudiante;public class Estudiante {
+package mx.edu.utez.REDRE.models.estudiante;
+
+public class Estudiante {
 }

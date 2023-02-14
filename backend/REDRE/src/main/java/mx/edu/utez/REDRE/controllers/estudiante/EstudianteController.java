@@ -1,2 +1,4 @@
-package mx.edu.utez.REDRE.controllers.estudiante;public class EstudianteController {
+package mx.edu.utez.REDRE.controllers.estudiante;
+
+public class EstudianteController {
 }

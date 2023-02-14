@@ -1,2 +1,4 @@
-package mx.edu.utez.REDRE.models.asesor;public interface AsesorRepository {
+package mx.edu.utez.REDRE.models.asesor;
+
+public interface AsesorRepository {
 }

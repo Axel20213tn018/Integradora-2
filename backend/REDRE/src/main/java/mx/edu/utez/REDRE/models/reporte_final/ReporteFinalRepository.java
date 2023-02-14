@@ -1,2 +1,4 @@
-package mx.edu.utez.REDRE.models.reporte_final;public interface ReporteFinalRepository {
+package mx.edu.utez.REDRE.models.reporte_final;
+
+public interface ReporteFinalRepository {
 }

@@ -1,2 +1,4 @@
-package mx.edu.utez.REDRE.services.departamento;public class DepartamentoService {
+package mx.edu.utez.REDRE.services.departamento;
+
+public class DepartamentoService {
 }
