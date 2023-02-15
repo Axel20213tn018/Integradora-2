@@ -18,6 +18,7 @@ public class DepartamentoDto {
     private String divisionAcademica;
     private Responsable responsable;
 
+    /*
     public Departamento getDepartamento(){
         return new Departamento(
             getId(),
@@ -27,5 +28,5 @@ public class DepartamentoDto {
             getDivisionAcademica(),
             getResponsable()
         );
-    }
+    } */
 }
