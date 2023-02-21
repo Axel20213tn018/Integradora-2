@@ -77,3 +77,12 @@ header { /*Etiqueta Header*/
 .title {
     color: white;
 }
+
+.hrlinea{
+    height: 2px;
+    border: 3px solid #3D9982;
+    color: #3D9982;
+    background-color: #3D9982;
+    opacity: 100;
+}
+        
