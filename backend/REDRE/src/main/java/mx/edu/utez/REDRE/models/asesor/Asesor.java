@@ -4,9 +4,11 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import mx.edu.utez.REDRE.models.estudiante.Estudiante;
 import mx.edu.utez.REDRE.models.responsable.Responsable;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "asesores")
@@ -32,6 +34,9 @@ public class Asesor {
     private String divisionAcademica;
 
     @ManyToOne
-    @JoinColumn(name = "responsables_id", nullable = false)
+    @JoinColumn(name = "responsable_id", nullable = false)
     private Responsable responsable;
+
+    @OneToMany(mappedBy = "asesor")
+    private List<Estudiante> estudiantes;
 }
