@@ -20,4 +20,3 @@ Miembros de Equipo:
 - Axel Hernandez De La Cruz
 - Andrea Michelle Estrada Hernandez
 - Ximena Natalia Garcia Araujo
-- Elena Abigail Alanis Reyes
