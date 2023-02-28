@@ -10,7 +10,7 @@ Contenido:
   - WEB
     - REDRE (React)
   - Android
-    - REDRE (expo/cli)
+    - REDRE (React - expo/cli)
 - DataBase
   - (Scripts y Modelos)
 - Vistas Integradora (Prototipo de Vistas Web)
