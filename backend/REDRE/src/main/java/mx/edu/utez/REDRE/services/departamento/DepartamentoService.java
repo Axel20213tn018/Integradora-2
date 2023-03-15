@@ -27,10 +27,19 @@ public class DepartamentoService {
         );
     }
 
+    @Transactional(readOnly = true)
+    public CustomResponse<Departamento> getOne(Long id){
+        return new CustomResponse<>(
+                this.repository.findById(id).get(),
+                false,
+                200,
+                "OK"
+        );
+    }
+
     @Transactional(rollbackFor = {SQLException.class})
     public CustomResponse<Departamento> insert(Departamento departamento){
-        Optional<Departamento> exist = this.repository.findByEmail(departamento.getCorreo());
-        if (exist.isPresent()){
+        if (this.repository.existsByCorreo(departamento.getCorreo())){
             return new CustomResponse<>(
                     null,
                     true,
@@ -46,11 +55,9 @@ public class DepartamentoService {
         );
     }
 
-    // TODO: investigar como hacer correctamente el update
     @Transactional(rollbackFor = {SQLException.class})
     public CustomResponse<Departamento> update(Departamento departamento){
-        Optional<Departamento> exist = this.repository.findById(departamento.getId());
-        if (exist.isEmpty()){
+        if (!this.repository.existsById(departamento.getId())){
             return new CustomResponse<>(
                     null,
                     true,
@@ -62,7 +69,22 @@ public class DepartamentoService {
                 this.repository.saveAndFlush(departamento),
                 false,
                 200,
-                "Departamento Registrado correctamente"
+                "Departamento Actualizado correctamente"
+        );
+    }
+
+    @Transactional(rollbackFor =  {SQLException.class})
+    public CustomResponse<Boolean> changeStatus(Departamento departamento){
+        if(!this.repository.existsById(departamento.getId())){
+            return new CustomResponse<>(
+                    null, true, 400, "El Departamento no existe"
+            );
+        }
+        return new CustomResponse<>(
+                this.repository.updateStatusById(departamento.getStatus(), departamento.getId()),
+                false,
+                200,
+                "Se ha cambiado el status del departamento"
         );
     }
 }

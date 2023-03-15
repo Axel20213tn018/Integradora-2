@@ -2,6 +2,7 @@ package mx.edu.utez.REDRE.models.departamento;
 
 import javax.persistence.*;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -12,6 +13,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "departamentos")
+@AllArgsConstructor
 @NoArgsConstructor
 @Setter
 @Getter
@@ -29,21 +31,10 @@ public class Departamento {
     private String divisionAcademica;
     @Column(nullable = false, columnDefinition = "tinyint default 1")
     private Boolean status;
-    @OneToOne(mappedBy = "departamento", cascade = CascadeType.ALL, optional = false)
-    private Responsable responsable;
+    @OneToMany(mappedBy = "departamento")
+    private List<Responsable> responsables;
 
     @OneToMany(mappedBy = "departamento")
     private List<ReporteFinal> reportesFinales;
 
-    public Departamento(Long id, String uid, String nombre, String correo, String divisionAcademica, Boolean status, Responsable responsable, List<ReporteFinal> reportesFinales) {
-        this.id = id;
-        this.uid = uid;
-        this.nombre = nombre;
-        this.correo = correo;
-        this.divisionAcademica = divisionAcademica;
-        this.status = status;
-        this.responsable = responsable;
-        this.reportesFinales = reportesFinales;
-        this.responsable.setDepartamento(this);
-    }
 }

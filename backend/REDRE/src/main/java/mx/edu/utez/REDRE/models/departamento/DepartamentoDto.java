@@ -20,19 +20,19 @@ public class DepartamentoDto {
     private String correo;
     private String divisionAcademica;
     private Boolean status;
-    private Responsable responsable;
+    private List<Responsable> responsables;
     private List<ReporteFinal> reportesFinales;
 
-    public Departamento getDepartamento(){
+    public Departamento castToDepartamento(){
         return new Departamento(
-            getId(),
-            getUid(),
-            getNombre(),
-            getCorreo(),
-            getDivisionAcademica(),
-            getStatus(),
-            getResponsable(),
-            getReportesFinales()
+                getId(),
+                getUid(),
+                getNombre(),
+                getCorreo(),
+                getDivisionAcademica(),
+                getStatus(),
+                null,
+                null
         );
     }
 }

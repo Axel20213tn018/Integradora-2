@@ -34,7 +34,7 @@ public class Responsable {
     @Column(name = "division_academica", nullable = false, unique = true)
     private String divisionAcademica;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "departamento_id", referencedColumnName = "id", unique = true, nullable = false)
     @JsonIgnore
     private Departamento departamento;
