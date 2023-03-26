@@ -1,5 +1,6 @@
 package mx.edu.utez.REDRE.models.reporte_final;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -34,6 +35,7 @@ public class ReporteFinal {
 
     @ManyToOne
     @JoinColumn(name = "departamento_id", nullable = false)
+    @JsonBackReference
     private Departamento departamento;
 
     @OneToMany(mappedBy = "reporteFinal")

@@ -17,22 +17,26 @@ public class DepartamentoDto {
     private Long id;
     private String uid;
     private String nombre;
+    private String apellidos;
     private String correo;
+    private String password;
     private String divisionAcademica;
     private Boolean status;
     private List<Responsable> responsables;
     private List<ReporteFinal> reportesFinales;
 
-    public Departamento castToDepartamento(){
+    public Departamento getDepartamento(){
         return new Departamento(
                 getId(),
                 getUid(),
                 getNombre(),
+                getApellidos(),
                 getCorreo(),
+                getPassword(),
                 getDivisionAcademica(),
                 getStatus(),
-                null,
-                null
+                getResponsables(),
+                getReportesFinales()
         );
     }
 }

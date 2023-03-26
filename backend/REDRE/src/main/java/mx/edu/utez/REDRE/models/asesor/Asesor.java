@@ -1,5 +1,7 @@
 package mx.edu.utez.REDRE.models.asesor;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -28,6 +30,8 @@ public class Asesor {
     private String apellidos;
     @Column(nullable = false, unique = true)
     private String correo;
+    @Column(name = "password", nullable = false)
+    private String password;
     @Column(nullable = false, columnDefinition = "tinyint default 1")
     private Boolean status;
     @Column(name = "division_academica", nullable = false, unique = true)
@@ -35,6 +39,7 @@ public class Asesor {
 
     @ManyToOne
     @JoinColumn(name = "responsable_id", nullable = false)
+    @JsonBackReference
     private Responsable responsable;
 
     @OneToMany(mappedBy = "asesor")

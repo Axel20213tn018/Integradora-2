@@ -14,13 +14,13 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("/redre/api/departamento")
+@RequestMapping("/redre/api/departamento/")
 @CrossOrigin(origins = {"*"})
 public class DepartamentoController {
     @Autowired
     private DepartamentoService service;
 
-    @GetMapping("/")
+    @GetMapping("/getAll")
     public ResponseEntity<CustomResponse<List<Departamento>>>
     getAll(){
         return new ResponseEntity<>(
@@ -29,34 +29,64 @@ public class DepartamentoController {
         );
     }
 
+    @GetMapping("/")
+    public ResponseEntity<CustomResponse<List<Departamento>>>
+    getAllActive(){
+        return new ResponseEntity<>(
+                this.service.getAllActive(),
+                HttpStatus.OK
+        );
+    }
+
     @PostMapping("/")
     public ResponseEntity<CustomResponse<Departamento>> insert(
-            @Valid @RequestBody DepartamentoDto departamento,
+            @RequestBody DepartamentoDto departamento,
             @Valid BindingResult result
     ){
+        if (result.hasErrors()) {
+            return new ResponseEntity<>(
+                    null,
+                    HttpStatus.BAD_REQUEST
+            );
+        }
         return new ResponseEntity<>(
-                this.service.insert(departamento.castToDepartamento()),
+                this.service.insert(departamento.getDepartamento()),
                 HttpStatus.CREATED
+        );
+    }
+
+    //Obtener un registro
+    @GetMapping("/{id}")
+    public ResponseEntity<CustomResponse<Departamento>> getOne(@PathVariable("id") Long id) {
+        return new ResponseEntity<>(
+                this.service.getOne(id),
+                HttpStatus.OK
         );
     }
 
     @PutMapping("/")
     public ResponseEntity<CustomResponse<Departamento>> update(
-            @Valid @RequestBody DepartamentoDto departamento,
-            BindingResult result
+            @RequestBody DepartamentoDto departamento,
+            @Valid BindingResult result
     ){
+        if (result.hasErrors()) {
+            return new ResponseEntity<>(
+                    null,
+                    HttpStatus.BAD_REQUEST
+            );
+        }
         return new ResponseEntity<>(
-                this.service.update(departamento.castToDepartamento()),
+                this.service.update(departamento.getDepartamento()),
                 HttpStatus.CREATED
         );
     }
 
     @PatchMapping("/")
     public ResponseEntity<CustomResponse<Boolean>> enableOrDisable(
-            @RequestBody DepartamentoDto departamento
+            @Valid @RequestBody DepartamentoDto departamento
     ) {
         return new ResponseEntity<>(
-                this.service.changeStatus(departamento.castToDepartamento()),
+                this.service.changeStatus(departamento.getDepartamento()),
                 HttpStatus.OK
         );
     }

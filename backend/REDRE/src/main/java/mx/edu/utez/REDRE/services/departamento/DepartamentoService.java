@@ -4,6 +4,7 @@ import mx.edu.utez.REDRE.models.departamento.Departamento;
 import mx.edu.utez.REDRE.models.departamento.DepartamentoRepository;
 import mx.edu.utez.REDRE.utils.CustomResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -24,6 +25,16 @@ public class DepartamentoService {
                 false,
                 200,
                 "Ok"
+        );
+    }
+
+    @Transactional(readOnly = true)
+    public CustomResponse<List<Departamento>> getAllActive(){
+        return new CustomResponse<>(
+                this.repository.findAllByStatus(true),
+                false,
+                200,
+                "OK"
         );
     }
 
@@ -81,7 +92,7 @@ public class DepartamentoService {
             );
         }
         return new CustomResponse<>(
-                this.repository.updateStatusById(departamento.getStatus(), departamento.getId()),
+                this.repository.updateStatusById(departamento.getStatus(), departamento.getId()) == 1,
                 false,
                 200,
                 "Se ha cambiado el status del departamento"
