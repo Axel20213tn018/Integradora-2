@@ -30,7 +30,10 @@ public class Departamento {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    //Si no vamos a implementar Firebase eliminar de todos los modelos
     @Column(name = "uid", nullable = false, unique = true)
+    
     private String uid;
     @Column(name = "nombre", nullable = false)
     private String nombre;

@@ -24,9 +24,9 @@ public class ReporteFinal {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name = "reporte_tsu")
-    private String reporteTsu; // Posible cambio a futuro
+    private String reporteTsu;
     @Column(name = "reporte_ing")
-    private String reporteIng; // Posible cambio a futuro
+    private String reporteIng;
 
     @OneToOne
     @JoinColumn(name = "alumno_id", referencedColumnName = "id", unique = true, nullable = false)

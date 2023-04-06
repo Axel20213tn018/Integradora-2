@@ -17,6 +17,7 @@ public class Mensaje {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    //Si no vamos a implementar Firebase cambiar por ids
     @Column(name = "uid_remitente", nullable = false)
     private String uidRemitente;
     @Column(name = "uid_destinatario", nullable = false)

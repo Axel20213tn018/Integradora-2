@@ -11,7 +11,7 @@ import lombok.Setter;
 @Getter
 public class CustomResponse<T> {
     T obj;
-    Boolean status;
+    Boolean errorStatus;
     int statusCode;
     String message;
 }

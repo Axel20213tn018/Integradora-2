@@ -1,0 +1,99 @@
+// Departamentos (url): http://localhost:8080/redre/api/departamento/
+// Insertar Nuevo Departamento
+
+{
+    "uid": "",
+    "nombre": "",
+    "apellidos": "",
+    "correo": "",
+    "password": "",
+    "divisionAcademica": "",
+    "status": true
+}
+
+// Actualizar
+
+{
+    "id": 1,
+    "uid": "812ASF7834598",
+    "nombre": "Natalia",
+    "apellidos": "Garcia",
+    "correo": "20213tn015@utez.edu.mx",
+    "password": "natalia123",
+    "divisionAcademica": "DATID",
+    "status": false
+}
+
+// Respuesta dada por el servidor
+// Get
+{
+    "obj": [ // Arreglo de uno o más
+        {
+            "id": 1,
+            "uid": "812ASF7834598",
+            "nombre": "Natalia",
+            "apellidos": "Garcia",
+            "correo": "20213tn015@utez.edu.mx",
+            "password": "natalia123",
+            "divisionAcademica": "DATID",
+            "status": false,
+            "responsables": [],
+            "reportesFinales": []
+        }
+    ],
+    "errorStatus": false,
+    "statusCode": 200,
+    "message": "Ok"
+}
+
+# Responsable (url): http://localhost:8080/redre/api/responsable/
+// Insertar Nuevo Responsable
+{
+    "uid": "",
+    "nombre": "Pablo",
+    "apellidos": "Samuel",
+    "correo": "20213tn010@utez.edu.mx",
+    "password": "pablito123",
+    "divisionAcademica": "DATID",
+    "status": true,
+    "departamento": 
+    {
+        "id": 1
+    }
+}
+
+// Actualizar
+{
+	"id": 1,
+    "uid": "8724257632",
+    "nombre": "Pablo",
+    "apellidos": "Samuel",
+    "correo": "20213tn010@utez.edu.mx",
+    "password": "pablito123",
+    "divisionAcademica": "DATID",
+    "status": true,
+    "departamento": 
+    {
+        "id": 1
+    }
+}
+
+// Respuesta del servidor
+{
+    "obj": [
+        {
+            "id": 1,
+            "uid": "8724257632",
+            "nombre": "Pablo",
+            "apellidos": "Samuel",
+            "correo": "20213tn010@utez.edu.mx",
+            "password": "pablito123",
+            "status": true,
+            "divisionAcademica": "DATID",
+            "asesores": []
+        }
+    ],
+    "errorStatus": false,
+    "statusCode": 200,
+    "message": "OK"
+}
